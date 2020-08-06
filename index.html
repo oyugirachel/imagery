@@ -1,0 +1,101 @@
+<!DOCTYPE html> 
+<html> 
+<meta charset="utf-8"> 
+  
+<head> 
+  
+    <link rel="stylesheet" href= 
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css"> 
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+    </script> 
+    <script src= 
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"> 
+    </script> 
+</head> 
+<body> 
+    <br> 
+    <br> 
+    <center> 
+        <h1 class="text text-success">Let's get an insight to one's soul, the great asset alive with the help of brother brain and cranium enclosing the confidentiality of the info</h1> 
+        <b>Though Shall not let thy negative energy penetrate thy aura</b> 
+    </center> 
+    <br> 
+    <br> 
+    <div class="container-fluid"> 
+        <center> 
+            <div id=gallery> 
+                
+                <!-- Content is appended here -->
+            </div> 
+        </center> 
+  
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog"> 
+            <div class="modal-dialog"> 
+  
+                <!-- Modal content-->
+                <div class="modal-content"> 
+                    <div class="modal-header"> 
+                        <button type="button" class="close" 
+                                data-dismiss="modal"> 
+                          × 
+                        </button> 
+  
+                    </div> 
+                    <div class="modal-body"> 
+                    </div> 
+                    <div class="modal-footer"> 
+                           
+                    </div> 
+                </div> 
+            </div> 
+      </div> 
+  </div> 
+  <script> 
+                
+      // Taking Array of Image Addresses  
+      // Suppose it as information from the server 
+      // Modify this for different address 
+      a = [ 
+'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTgQEyyJqYIckyIzbD2M0u7yWUpGp9X5BUYPA&usqp=CAU', 
+'hacking.jpg', 
+'ages.jpg', 
+'download.jpg', 
+'nature.jpg', 
+'images.jpg' 
+      ]; 
+      var x = 0; 
+      for (var i = 0; x < a.length; i++) { 
+          var append = "<div class='row'>"; 
+          for (var j = 0; j < 6 && x < a.length; j++) { 
+              append += ` 
+      <div class="contain col-sm-6 col-md-2"> 
+          <img class="img-responsive" src=` + a[x++] + `> 
+      </div> 
+      `; 
+          } 
+          append += '</div>'; 
+          appender(append); 
+      } 
+  
+      // Function to append the data 
+      function appender(x) { 
+          $('#gallery').html(function(i, original_html) { 
+              return (original_html + x); 
+          }); 
+      } 
+  
+      // For Image Modal 
+      $(document).on('click', 'img', function() { 
+          imgAddr = $(this).attr('src'); 
+          data = "<center><img src=" + imgAddr + " width='50%'>"; 
+          $('#myModal').find('.modal-body').html(data); 
+          $('#myModal').modal(); 
+      }); 
+  </script>
+    
+</body> 
+  
+</html> 
